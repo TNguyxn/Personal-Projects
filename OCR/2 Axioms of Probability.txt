@@ -1,0 +1,516 @@
+--- Page 1 ---
+CECS-381:
+Stochastic Computing
+
+Instructor: Yutong Zhao
+Semester: Fall 2025
+Class-2: Axioms of Probability
+
+IB | LONG BEACH itfffasiv
+
+A California State University Campus
+
+
+--- Page 2 ---
+Recap from Week 1: Counting Principles
+
+e@ Last week, we established the groundwork for quantifying possibilities.
+
+We learned:
+
+e Product Rule: When multiple independent tasks are performed in
+sequence, the total number of ways is the product of the ways for each
+task. E.g., choosing a shirt AND pants.
+
+Sum Rule: When a task can be performed in one of several mutually
+exclusive ways, the total number of ways is the sum of the ways for
+each alternative. E.g., choosing a math course OR a CS course.
+Permutations: Arrangements of objects where the order of selection is
+crucial. E.g., awarding gold, silver, bronze medals. Formula:
+
+P(n, k) = C=
+
+e Combinations: Selections of objects where the order does NOT
+
+matter. E.g., forming a committee. Formula: C(n,k) = (2) = =a
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+
+--- Page 3 ---
+Recap from Week 1: Counting Principles
+
+@ These counting principles are indispensable for determining the size of
+the sample space (||) and the number of outcomes in an event
+(|E|), which are the building blocks for classical probability.
+
+@ Today, we transition from “how many ways’ to “how likely” —
+introducing the formal framework of probability.
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+--- Page 4 ---
+What is Probability? (Intuitive Understanding)
+
+@ Probability is a numerical measure of the likelihood or chance that a
+specific event will occur.
+
+e It is always a value between 0 and 1, inclusive.
+
+@ A probability of 0 (P(E) = 0) indicates that the event E is impossible
+and will never occur.
+
+@ A probability of 1 (P(E) = 1) indicates that the event E is certain to
+occur.
+
+@ Values between 0 and 1 represent varying degrees of likelihood.
+
+@ Probabilities are often expressed as fractions (e.g., 1/2), decimals
+(e.g., 0.5), or percentages (e.g., 50%).
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+
+--- Page 5 ---
+Classical Definition of Probability
+
+@ The Classical Definition of probability applies when all outcomes in
+the sample space are equally likely.
+
+e If an experiment has a finite sample space 2 with equally likely
+outcomes, and an event E C Q), then the probability of event E is:
+
+P(E) = Number of favorable outcomes for E _ [E|
+Total number of possible outcomes —|Q)|
+e@ Example: Rolling a fair six-sided die.
+
+e Sample Space 2 = {1,2,3,4,5,6}, so |Q| = 6.
+
+e Event E = {rolling an even number} = {2,4, 6}, so |E| = 3.
+
+e P(E) = fet = 3 = 3-
+
+e This definition is intuitive for simple, symmetric experiments.
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+
+--- Page 6 ---
+Limitations of the Classical Definition
+
+@ The classical definition relies heavily on the assumption of " equally
+likely outcomes” .
+
+e Problem: What if outcomes are not equally likely? (e.g., a biased coin
+where heads is more likely than tails). The formula |E|/|Q| would not
+apply directly.
+
+@ It struggles with situations involving infinite sample spaces.
+
+e Problem: What is the probability of choosing exactly 0.5 from all real
+numbers between 0 and 1? The "number of outcomes’ becomes
+ill-defined.
+
+@ It doesn't provide a rigorous mathematical foundation for deriving
+more complex probability rules and theorems.
+
+@ To overcome these limitations and build a universal framework, we
+turn to the axiomatic approach.
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+
+--- Page 7 ---
+Axiomatic Approach to Probability (Kolmogorov, 1933)
+
+e@ Andrey Kolmogorov introduced an axiomatic framework for
+
+probability.
+@ Probability is defined through three fundamental axioms.
+
+@ These axioms guarantee mathematical consistency and provide the
+basis for all probability theorems.
+
+Yutong Zhao Stochastic Computing
+
+
+--- Page 8 ---
+Axiom 1: Non-negativity
+
+e@ Statement: For any event E € fF,
+PCE) = 0
+
+e@ Meaning: Probabilities cannot be negative.
+
+e@ Example: Rolling a 7 on a standard die: P({7}) = 0, never negative.
+
+Yutong Zhao Stochastic Computing
+
+
+--- Page 9 ---
+Axiom 2: Normalization
+
+e@ Statement: The probability of the entire sample space is 1:
+PQ) = 1
+
+e@ Meaning: When an experiment is performed, some outcome in 2
+must occur.
+
+@ Example: Rolling a die always gives some face {1, 2,3, 4,5,6}, so the
+total probability is 1.
+
+Yutong Zhao Stochastic Computing
+
+
+--- Page 10 ---
+Axiom 3: Countable Additivity
+
+e@ Statement: For any sequence of pairwise disjoint events
+
+Ey, Bo, --- EF, . .
+P( Ue) = 5 P(E)
+i=1 si
+
+e Meaning: If events cannot happen together, the probability of “any
+of them happening” is the sum of their probabilities.
+
+e Example: On a die, P({2}U {4}) = P({2}) + P({4}) =2 42 =}.
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+--- Page 11 ---
+Definition 1.1: Probability Space
+
+A probability space is a triplet (02,7, P), where:
+@ 2: the sample space, the set of all possible outcomes.
+e F: a collection of events (subsets of (2).
+
+e@ P: the probability measure, a function assigning probabilities to
+events in F.
+
+Yutong Zhao Stochastic Computing
+
+
+--- Page 12 ---
+Definition 1.2: Probability Function
+
+A probability function is a map P: F — R satisfying:
+e@ Non-negativity: P(E) > 0 for all Ee F.
+e@ Normalization: P(Q) = 1.
+e@ Countable additivity: For any disjoint E,, Eo,...,
+
+AU E\) = >> PCE).
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+--- Page 13 ---
+Remarks (Discrete Probability Spaces)
+
+@ In many cases we use discrete spaces: (2 is finite or countably
+infinite, and F is often all subsets of 2.
+
+@ In such cases, P is uniquely determined by the probabilities of the
+simple (elementary) events in 2.
+
+Yutong Zhao Stochastic Computing
+
+
+--- Page 14 ---
+Lemma 1.1: Two-Event Union
+
+Statement. For any £;, fo € F,
+P(E, U E>) = P(E,) + P(E2) — P(E, M E>).
+
+Idea. When we sum P(E£;) and P(Ez), we are adding the probabilities of
+all outcomes in F, and all outcomes in E>. Any outcome in the
+intersection (E, M E2) gets its probability counted twice. To correct this,
+we must subtract the probability of the intersection once.
+
+Use. Corrects the double-counting of the intersection.
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+--- Page 15 ---
+Lemma 1.2: Union Bound
+
+Statement. For any finite or countable collection of events
+
+Fy, Bo,--- EF,
+P(UE) < 30 P(6).
+
+Use. Provides a simple upper bound on the probability of a union, even
+when events are not disjoint.
+
+Example. For events EF; = {rain}, Es = {snow}:
+
+P(rain or snow) < P(rain) + P(snow).
+
+Yutong Zhao
+
+Stochastic Computing
+
+
+--- Page 16 ---
+Lemma 1.3: Inclusion—Exclusion Principle
+
+Statement. For any n events £;,...,E, € F,
+P(Ue) =>5P()- SS P(E)
+i=1 i=1 1<i<j<n
+
++ So P(EINE OE)
+1<i<j<k<n
+—++-4+(—1)"t! P(E, n---N E,).
+
+Use. Gives the exact probability of a union by alternating signs to correct
+for over-counting.
+
+Yutong Zhao Stochastic Computing
+
+
+--- Page 17 ---
+Definition 1.3: Independence of Two Events
+
+Definition. Two events E, F € F are independent if and only if
+PIEN FF) — PCE) « Pe).
+
+Intuition. The occurrence of E does not affect the probability of F, and
+vice versa. Knowing that one event happened gives no extra information
+about the other.
+Example.
+e Tossing two fair coins:
+E = {first coin is heads}, F = {second coin is heads}. Then
+P(E) = P(F)=% and PQPENF)=5%=5°5. => Eand F are
+independent.
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+--- Page 18 ---
+Definition 1.4: Mutual Independence
+
+Definition. A collection of events Fi, Fo,..., FE, € F are mutually
+independent if for every subset {E;,, E;,,..., &;, } (with 1< k <n),
+
+Pie M Ey M.A FE.) = PCE: ) . PUE) tee P(E; )
+
+Intuition. Not only are events independent in pairs, but every group of
+them behaves independently.
+Example.
+
+@ Tossing three fair coins. Let E; = {coin 1 is heads},
+
+E> = {coin 2 is heads}, E3 = {coin 3 is heads}. Then for any subset
+(pairs or all three together), the independence condition holds.
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+--- Page 19 ---
+Axioms of Probability: Example 1 - Rolling a Die
+
+Rolling a Fair Six-Sided Die
+
+Experiment: roll a fair die. Sample space: Q = {1,2,3,4,5,6}, each
+outcome has probability 1/6.
+
+Check Axiom 1 (Non-negativity): For any x € 2, P({x}) =1/6>0.
+Thus, for any event E C 9, P(E) > 0.
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+
+--- Page 20 ---
+Axioms of Probability: Example 1 - Rolling a Die (Cont.)
+
+Checking Axiom 2 (Normalization)
+
+6
+P(Q) = 55 P({x}) =6x g=1.
+
+X=
+
+Hence, the total probability is 1 (100%).
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+
+--- Page 21 ---
+Axioms of Probability: Example 1 - Rolling a Die (Cont.)
+
+Checking Axiom 3 (Additivity)
+
+Let E, = {2,4,6} (even), Ep = {1,3,5} (odd). They are disjoint:
+FE M E, = 0, and
+
+P(E:) =3/6=1/2, P(E) = 3/6 =1/2.
+Then
+
+P(E, U Ep) = P(E,) + P(E) = 1/2+1/2=1= P(Q).
+Additivity holds.
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+
+--- Page 22 ---
+Axioms of Probability: Example 2 - Drawing a Card
+
+Drawing a Single Card from a Deck
+
+Experiment: draw one card from a standard 52-card deck. Sample space:
+Q = {all 52 cards}, each card equally likely.
+Define events:
+
+A = {draw an Ace}, B= {draw a Heart}.
+
+PA)=S5=%, P(B)=#=3
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+
+--- Page 23 ---
+Axioms of Probability: Example 2 - Drawing a Card
+
+(Cont. )
+
+Intersection of A and B
+Are A and B disjoint? No. The Ace of Hearts belongs to both events:
+
+An B = {Ace of Hearts}, P(ANB) = gs.
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+--- Page 24 ---
+Axioms of Probability: Example 2 - Drawing a Card
+
+(Cont. )
+
+Applying Addition Rule
+
+Since A and B are not disjoint, use Lemma 1.1:
+P(AU B) = P(A) + P(B) — P(AN B).
+
+Substitute values:
+
+Correctly accounts for the overlap.
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+
+--- Page 25 ---
+Axioms of Probability: Exercise Questions
+
+@ A bag contains 10 red, 8 blue, and 2 green marbles. If one marble is
+drawn at random:
+@ What is the probability of drawing a red marble?
+@ What is the probability of drawing a blue marble?
+@ What is the probability of drawing a green marble?
+
+Yutong Zhao Stochastic Computing
+
+
+--- Page 26 ---
+Axioms of Probability: Solutions to Exercise Questions
+
+@ Total number of marbles = 10(red) + 8(blue) + 2(green) = 20
+
+marbles.
+@ P(Red) = #2 =1=055.
+@ P(Blue) = 3 =? = 0.4.
+@ P(Green) = % = 7% =0.1.
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+--- Page 27 ---
+Axioms of Probability: Exercise Questions (Cont.)
+
+@ A bag contains 10 red, 8 blue, and 2 green marbles. If one marble is
+drawn at random:
+
+@ What is the probability of drawing a red or a blue marble?
+@ What is the probability of not drawing a green marble?
+
+@ Let P(A) = 0.6, P(B) = 0.4, and P(AN B) = 0.2. Using the
+appropriate rule, find P(AU B).
+
+@ If the probability of event E occurring is P(E) = 0.7, what is the
+probability of its complement, P(E“)?
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+--- Page 28 ---
+Axioms of Probability: Solutions to Exercise Questions
+
+(Cont. )
+
+@ Total number of marbles = 20.
+@ By Axiom 3 (disjoint events):
+
+P(Red or Blue) = P(Red) + P(Blue) = 0.5+ 0.4 = 0.9
+@ By Complement Rule:
+
+P(Not Green) = 1 — P(Green) = 1—0.1 = 0.9
+
+Yutong Zhao Stochastic Computing
+
+
+--- Page 29 ---
+Axioms of Probability: Solutions to Exercise Questions
+
+(Cont. )
+
+@ Given P(A) = 0.6, P(B) = 0.4, P(AN B) = 0.2. Use Addition Rule:
+P(AU B) = P(A) + P(B) — P(AN B)
+P(AUB) =06+04-0.2=0.8
+@ Given P(E) = 0.7. By Complement Rule:
+
+P(E°) =1— P(E) =1-0.7=0.3
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
+--- Page 30 ---
+Axioms of Probability: Exercise Questions 2
+
+@ A coin is flipped twice.
+@ List the sample space 2.
+@ What is the probability of getting exactly one Head?
+@ What is the probability of getting at least one Tail?
+@ Let A= {first flip is Head}, B = {second flip is Head}. Are A and B
+independent?
+
+Yutong Zhao Stochastic Computing
+
+
+--- Page 31 ---
+Axioms of Probability: Solutions to Exercise 2
+
+@ Two flips of a fair coin.
+@ 2 ={HH,HT,, TH, TT}:
+@ Exactly one Head: outcomes {HT, TH}.
+
+P(exactly 1 H) = 5 = 0.5.
+@ At least one Tail: outcomes {HT, TH, TT}.
+P(at least 1 T) = ? = 0.75.
+
+@ P(A) = 7 =0.5, P(B) = 7 = 0.5, P(AN B) = P({HH}) = . Since
+P(An B) = P(A) - P(B) = 0.25, events A and B are independent.
+
+Yutong Zhao Stochastic Computing Fall 2025
+
+
